@@ -1,5 +1,5 @@
 title: 星合の空 # 站点标题
-description: Kan Wu's Personal Blog
+description: 다시 만나지 말길 바라며 적는 블로그
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
 defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/front-matter-defaults/>功能进行配置
@@ -34,32 +34,22 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
           dark-theme: dark
           menu:
             nav: # 导航部分的内容，你也可以自己增加对应的链接
-              - title: '首页 / Index'
+              - title: Index'
                 href: /
-              - title: '留言 / Comments'
+              - title: 'Comments'
                 href: /comments/
-              - title: '归档 / Archive'
+              - title: 'Archive'
                 href: /archive/
-              - title: '标签 / Tags'
+              - title: 'Tags'
                 href: /tags/
-              - title: '捐赠 / Donate'
+              - title: 'Donate'
                 href: /donate/
-              - title: '简历 / Resume'
-                href: https://resume.wu-kan.cn/
               - title: 'GitHub'
-                href: https://github.com/wu-kan
-              - title: 'Bilibili'
-                href: https://space.bilibili.com/166390020
-              - title: 'Zhihu'
-                href: https://www.zhihu.com/people/wukan0621
-              - title: 'Google Scholar'
-                href: https://scholar.google.com/citations?user=aU9P37UAAAAJ
-              - title: 'Vjudge'
-                href: https://vjudge.net/user/WuK
+                href: https://github.com/necteo
               - title: 'jekyll-theme-WuK'
                 href: https://jekyll-theme-WuK.wu-kan.cn/
             footer: | # 页面统计
-              <div>
+              <!-- <div>
                 <span id="busuanzi_container_site_pv">
                   <span id="busuanzi_value_site_pv"></span>
                   visits
@@ -75,7 +65,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
               </div>
               <div>
                 (C) 2017-2025 wu-kan
-              </div>
+              </div> -->
             jekyll-toc: # <https://github.com/allejo/jekyll-toc>
               enable: true
               prepend: |
