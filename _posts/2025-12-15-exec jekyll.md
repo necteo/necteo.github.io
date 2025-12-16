@@ -60,14 +60,14 @@ Configuration file: C:/blog/_config.yml
 bundler: failed to load command: jekyll (C:/Ruby34-x64/bin/jekyll)
 C:/Ruby34-x64/lib/ruby/3.4.0/fileutils.rb:403:in 'Dir.mkdir': Invalid argument @ dir_s_mkdir - C:/blog/C: (Errno::EINVAL)
 ```
-갑자기 `mkdir`을 왜 하는 걸까 싶었는데
+갑자기 `mkdir`을 왜 하는 걸까
 
 일단 Remote Theme을 주석처리하니까 에러는 사라졌다
 
 그런데 디자인이 사라지는 문제가 발생
 
+아무래도 테마 원격 서버에서 뭔가를 하는 것 같은데
+
+argument 설정을 어디서 해야되는지 모르겠다
+
 C드라이브에 C드라이브를 대체 왜 만드는건데..
-
-이건 내가 어떻게 못할 것 같다..
-
-그냥 갈아 엎어야겠다

@@ -18,19 +18,31 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 패배한 에러가 너무 많다
+title: 가끔씩 영어로 튀어나오는 콘솔창의 에러양
 email: jaehwa06@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
-  기록을 합니다
+  다시 만나지 말자
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://necteo.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  necteo
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: comment
+      
+  
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+# category
+categories_main: [에러, 공부]
+categories_error: [SpringBoot, JSP, ThymeLeaf, Vue, React, SQL, 그 외]
+categories_study: [Jekyll, 알고리즘, 예상질문]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
