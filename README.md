@@ -1,1 +1,3 @@
-# 어서와라 나의 블로그에
+# Github Blog
+
+### [링크](https://necteo.github.io)

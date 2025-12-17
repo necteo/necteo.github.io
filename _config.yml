@@ -22,28 +22,20 @@ title: 가끔씩 영어로 튀어나오는 콘솔창의 에러양
 email: jaehwa06@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
   다시 만나지 말자
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://necteo.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
-github_username:  necteo
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: comment
-      
-  
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://necteo.github.io/' # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username:
+github_username: necteo
 
 # Build settings
-theme: minima
+theme:
 plugins:
   - jekyll-feed
 
 # category
 categories_main: [에러, 공부]
 categories_error: [SpringBoot, JSP, ThymeLeaf, Vue, React, SQL, 그 외]
-categories_study: [Jekyll, 알고리즘, 예상질문]
-
+categories_study: [Jekyll, 알고리즘, 정리]
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
