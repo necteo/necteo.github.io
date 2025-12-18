@@ -3,18 +3,7 @@ layout: default
 ---
 
 <article>
-	<h1>{{page.title}}</h1>
-	<div class="info">
-		{{page.author}} |
-		{% assign category = page.categories[0] %}
-		<a href="/category/{{category}}">{{category}}</a>
-		{% if page.categories[1] %}
-		{% assign category = page.categories[1] %}
-		▶<a href="/category/{{category}}">{{category}}</a>
-		{% endif %}
-		| {{page.date | date: "%Y. %m. %d."}}
-	</div>
-
-	{{content}}
-
+  <h2>{{ page.title }}</h2>
+  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
+  {{ content }}
 </article>

@@ -1,53 +1,42 @@
----
-
----
-
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>{% if page.title %} {{page.title}} | {% endif %} {{site.title}}</title>
-  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico?" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0">
-</head>
+{% include head.html %}
 
 <body>
-
-  <header>
-    <div id="top_title">
-      <div class="top_title_pc">
-        <a href="/">
-          <h3>title_pc</h3>
-        </a>
-      </div>
-      <div class="top_title_mobile">
-        <a href="/">
-          <h3>title mobile</h3>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <div id="main">
-    <div id="sidebar1">
-      사이드바1(왼쪽) 부분
-    </div>
-    <div id="sidebar2">
-      사이드바2(오른쪽) 부분
-    </div>
-
-    <div id="content">
-      {{content}}
+  <div id="wrapper">
+    {% include header.html %}
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
     </div>
   </div>
 
-  <footer>
-    <div id="footer_content">
-      <p>{{site.github_username}}</p>
-    </div>
-  </footer>
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page == 1 %}
+    <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
+    {% elsif paginator.previous_page%}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
+    {% else %}
+    <span class="page-item">&laquo;</span>
+    {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
+    <span class="page-item">{{ page }}</span>
+    {% elsif page == 1 %}
+    <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">{{ page }}</a>
+    {% else %}
+    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="page-item">{{ page }}</a>
+    {% endif %} {% endfor %} {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&raquo;</a>
+    {% else %}
+    <span class="page-item">&raquo;</span>
+    {% endif %}
+  </div>
+  {% endif %} {% include footer.html %}
 
+  {% if site.google_analytics %}
+    {% include analytics.html %}
+  {% endif %}
 </body>
 
 </html>
