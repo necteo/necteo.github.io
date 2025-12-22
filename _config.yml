@@ -1,9 +1,9 @@
 title: 가끔씩 영어로 부끄러워하는 콘솔창의 에러양
-description: "A Jekyll Blog Theme For Hackers"
+description: 'A Jekyll Blog Theme For Hackers'
 author:
-  name: "necteo"
-  email: "jaehwa06@naver.com"
-  url: "necteo.github.io"
+  name: 'necteo'
+  email: 'jaehwa06@naver.com'
+  url: 'necteo.github.io'
 
 baseurl: /
 
@@ -15,10 +15,27 @@ paginate_path: /page/:num/
 
 defaults:
   - scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
+      layout: 'post'
+      comments:
+        append: |
+          <script src="https://giscus.app/client.js"
+                  data-repo="[ENTER REPO HERE]"
+                  data-repo-id="[ENTER REPO ID HERE]"
+                  data-category="[ENTER CATEGORY NAME HERE]"
+                  data-category-id="[ENTER CATEGORY ID HERE]"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="bottom"
+                  data-theme="preferred_color_scheme"
+                  data-lang="ko"
+                  crossorigin="anonymous"
+                  async>
+          </script>
 
 future: true
 plugins:
@@ -27,5 +44,5 @@ plugins:
   - jekyll-sitemap
 
 # Custom variables
-owner: "necteo"
-year: "2025"
+owner: 'necteo'
+year: '2025'
