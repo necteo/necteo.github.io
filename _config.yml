@@ -22,10 +22,10 @@ defaults:
       comments:
         append: |
           <script src="https://giscus.app/client.js"
-                  data-repo="[ENTER REPO HERE]"
-                  data-repo-id="[ENTER REPO ID HERE]"
-                  data-category="[ENTER CATEGORY NAME HERE]"
-                  data-category-id="[ENTER CATEGORY ID HERE]"
+                  data-repo="necteo/necteo.github.io"
+                  data-repo-id="R_kgDOQl-0Gg"
+                  data-category="Announcements"
+                  data-category-id="DIC_kwDOQl-0Gs4Cz2kj"
                   data-mapping="pathname"
                   data-strict="0"
                   data-reactions-enabled="1"
