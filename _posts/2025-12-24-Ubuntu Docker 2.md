@@ -23,6 +23,12 @@ ca-certificates \
 lsb-release
 ```
 
+OR
+
+```bash
+apt-get install ca-certificates curl gnupg lsb-release
+```
+
 ### Docker GPG Key 등록
 
 ```bash
