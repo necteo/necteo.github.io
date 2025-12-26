@@ -8,11 +8,8 @@ published: true
 ### Virtual Box에 Ubuntu 설치
 
 <img width="500" alt="Image" src="https://github.com/user-attachments/assets/40761bf6-14bd-4a8d-8c38-95a1967aa281" />
-
 <img width="500" alt="Image" src="https://github.com/user-attachments/assets/a3c8c7de-d9ea-4a15-9fba-5d5074b230f0" />
-
 <img width="500" alt="Image" src="https://github.com/user-attachments/assets/d97867bc-b1ac-4089-b21d-05fc3d8b676f" />
-
 <img width="500" alt="Image" src="https://github.com/user-attachments/assets/7b00c770-f587-4c61-8b39-08528f756937" />
 
 ### sudo 권한 부여
