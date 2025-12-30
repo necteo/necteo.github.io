@@ -62,9 +62,9 @@ ERROR: failed to build: failed to solve: failed to compute cache key: failed to 
 
 ### 7. 종료
 
-`docker stop [CONTAINER ID]`
+`docker stop [CONTAINER ID | CONTAINER NAME]`
 
-`docker rm [CONTAINER ID]`
+`docker rm [CONTAINER ID | CONTAINER NAME]`
 
 ### 8. Docker Hub에 저장
 
@@ -72,7 +72,7 @@ ERROR: failed to build: failed to solve: failed to compute cache key: failed to 
 
 ### 9. 태그 생성
 
-`docker tag [IMAGE NAME] [NAME]/[IMAGE NAME]:latest`
+`docker tag [IMAGE NAME] [NAME]/[NEW IMAGE NAME]:latest`
 
 ### 10. 저장하기
 
@@ -92,6 +92,6 @@ ERROR: failed to build: failed to solve: failed to compute cache key: failed to 
 
 ```powershell
 docker run --name my-app -it -d -p [PORT]:[PORT] [IMAGE ID]
-docker stop [CONTAINER ID]
-docker rm [CONTAINER ID]
+docker stop [CONTAINER ID | CONTAINER NAME]
+docker rm [CONTAINER ID | CONTAINER NAME]
 ```

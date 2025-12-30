@@ -18,20 +18,27 @@ cp \*jar 폴더
 
 원격 운영체제
 
-`sudo apt-get install openssh-server -y`
+```bash
+sudo apt-get install openssh-server -y
 
-`sudo systemctl status ssh`
+sudo systemctl status ssh
+```
 
 방화벽
-`sudo ufw status`
-`sudo ufw allow ssh`
-`sudo ufw allow 22/tcp`
 
-`sudo nano /etc/ssh/sshd_config`
+```bash
+sudo ufw status
+sudo ufw allow ssh
+sudo ufw allow 22/tcp
+sudo nano /etc/ssh/sshd_config
+```
 
 .ssh폴더에서
-`sh-keygen -t rsa`
-`sudo cat id_rsa.pub >> ~/.ssh/authorized_keys`
+
+```bash
+ssh-keygen -t rsa
+sudo cat id_rsa.pub >> ~/.ssh/authorized_keys
+```
 
 ---
 
@@ -41,7 +48,7 @@ cp \*jar 폴더
 
 ### 필요한 패키지 설치
 
-```
+```bash
 apt-get install \
 ca-certificates \
           curl \
@@ -51,13 +58,13 @@ lsb-release
 
 ### Docker GPG Key 등록
 
-```
+```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 
 ### Repository 등록
 
-```
+```bash
 echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -65,7 +72,7 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 
 ### hello-world 이미지 실행
 
-```
+```bash
 $ sudo docker run hello-world
 
 Unable to find image 'hello-world:latest' locally
