@@ -1,6 +1,5 @@
 ---
-title: '2025-12-24-Spring-Boot 프로젝트 Docker에서 CI/CD'
-published: true
+title: "2025-12-24-Spring-Boot 프로젝트 Docker에서 CI/CD"
 ---
 
 ---

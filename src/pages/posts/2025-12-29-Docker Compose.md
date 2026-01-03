@@ -1,5 +1,5 @@
 ---
-title: 'Docker Compose'
+title: "Docker Compose"
 ---
 
 ---
@@ -22,12 +22,12 @@ sudo nano docker-compose.yml
 ```
 
 ```yml
-version: '3'
+version: "3"
 services:
   app:
     image: spring-devs
     ports:
-      - '8080:8080'
+      - "8080:8080"
 ```
 
 ### Docker 설치 복습

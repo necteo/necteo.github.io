@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "This key is used in a map and contains special characters. It is recommended to escape it by surrounding it with '[]'"
-date: 오전 9:40 2025-12-16
-categories: jekyll update
+# layout: post
+title: "This key is used in a map and contains special characters. It is recommended to escape it by surrounding it with '[]'"
+# date: 오전 9:40 2025-12-16
+# categories: jekyll update
 ---
 
 jpa 사용을 위해
@@ -44,4 +44,3 @@ jpa:
 ```
 
 `_`값이 들어간 키를 `'[]'`로 감싸주니 사라졌다
-

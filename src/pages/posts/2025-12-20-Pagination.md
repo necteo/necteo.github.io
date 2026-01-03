@@ -1,6 +1,5 @@
 ---
 title: "Pagination"
-published: true
 ---
 
 이번 테마에 페이지네이션이 있길래 살펴보고 있다

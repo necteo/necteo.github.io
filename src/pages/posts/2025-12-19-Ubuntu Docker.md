@@ -1,6 +1,5 @@
 ---
-title: 'Ubuntu Docker'
-published: true
+title: "Ubuntu Docker"
 ---
 
 Spring Boot 프로젝트에서

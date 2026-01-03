@@ -1,6 +1,5 @@
 ---
-title: 'Virtual Box에 Ubuntu 설치'
-published: true
+title: "Virtual Box에 Ubuntu 설치"
 ---
 
 ---
