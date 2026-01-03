@@ -12,7 +12,13 @@
   "keywords": [
     "astro-component"
   ],
-  "scripts": {},
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "devDependencies": {
     "astro": "^5.16.6"
   },
