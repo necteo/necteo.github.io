@@ -1,8 +1,10 @@
 ---
-# layout: post
-title: "Exec Jekyll"
-# date: 오후 6:23 2025-12-15
-# categories: jekyll update
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Exec Jekyll'
+pubDate: 2025-12-15
+description: 'jekyll 실행과정'
+author: 'necteo'
+tags: ['jekyll', 'blogging', 'learning in public']
 ---
 
 테마를 적용했더니 갑자기 만난 오류

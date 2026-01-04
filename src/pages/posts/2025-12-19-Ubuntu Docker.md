@@ -1,5 +1,10 @@
 ---
-title: "Ubuntu Docker"
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Ubuntu Docker'
+pubDate: 2025-12-19
+description: 'Ubuntu에서 Docker 실행하기'
+author: 'necteo'
+tags: ['Ubuntu', 'Docker', 'learning in public']
 ---
 
 Spring Boot 프로젝트에서

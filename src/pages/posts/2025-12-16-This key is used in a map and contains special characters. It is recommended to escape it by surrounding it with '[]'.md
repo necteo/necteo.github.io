@@ -1,8 +1,10 @@
 ---
-# layout: post
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "This key is used in a map and contains special characters. It is recommended to escape it by surrounding it with '[]'"
-# date: 오전 9:40 2025-12-16
-# categories: jekyll update
+pubDate: 2025-12-16
+description: 'application.yml 설정 중 만나버렸다'
+author: 'necteo'
+tags: ['jpa', 'yml', 'learning in public']
 ---
 
 jpa 사용을 위해

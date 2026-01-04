@@ -1,5 +1,10 @@
 ---
-title: "Docker Compose"
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Docker Compose'
+pubDate: 2025-12-29
+description: 'Ubuntu에서 Docker Compose 실행하기'
+author: 'necteo'
+tags: ['Ubuntu', 'Docker', 'learning in public']
 ---
 
 ---
@@ -22,12 +27,12 @@ sudo nano docker-compose.yml
 ```
 
 ```yml
-version: "3"
+version: '3'
 services:
   app:
     image: spring-devs
     ports:
-      - "8080:8080"
+      - '8080:8080'
 ```
 
 ### Docker 설치 복습
