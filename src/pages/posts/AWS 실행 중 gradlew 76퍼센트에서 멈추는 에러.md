@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'AWS 실행 중 76%에서 멈추는 에러'
+title: 'AWS 실행 중 gradlew가 76%에서 멈추는 에러'
 pubDate: 2026-01-06
 description: 'gradlew를 했더니 76%에서 멈췄다'
 author: 'necteo'
