@@ -2,6 +2,7 @@
 title: Github Pages 배포 중 오류
 published: 2026-01-11
 description: '배포부터 문제라니'
+author: 'necteo'
 image: './thumbs/2026-01-11.jpg'
 tags: ['Blogging']
 category: 'Blog'
