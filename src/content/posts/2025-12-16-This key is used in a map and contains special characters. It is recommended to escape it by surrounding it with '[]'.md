@@ -1,6 +1,6 @@
 ---
 title: "This key is used in a map and contains special characters. It is recommended to escape it by surrounding it with '[]'"
-publishedDate: 2025-12-16
+published: 2025-12-16
 description: 'application.yml 설정 중 만나버렸다'
 author: 'necteo'
 tags: ['JPA', 'yml']
