@@ -6,7 +6,7 @@ interface Props {
 }
 
 const config = {
-	...commentConfig.twikoo,
+	...commentConfig.giscus,
 	el: "#tcomment",
 	path: Astro.props.path,
 };
@@ -14,7 +14,22 @@ const config = {
 
 <div id="tcomment"></div>
 <script is:inline src="/scroll-protection.js"></script>
-<script is:inline src="/assets/js/twikoo.all.min.js"></script>
+<script src="https://giscus.app/client.js"
+        data-repo={config.repo}
+        data-repo-id={config.repoId}
+        data-category={config.category}
+        data-category-id={config.categoryId}
+        data-mapping={config.mapping}
+        data-strict={config.strict}
+        data-reactions-enabled={config.reactionsEnabled}
+        data-emit-metadata={config.emitMetadata}
+        data-input-position={config.inputPosition}
+        data-theme={config.theme}
+        data-lang={config.lang}
+        crossorigin={config.crossorigin}
+        async>
+</script>
+<!-- <script is:inline src="/assets/js/twikoo.all.min.js"></script>
 <script is:inline define:vars={{ config }}>
   // 获取当前页面路径
   function getCurrentPath() {
@@ -79,4 +94,4 @@ const config = {
       initTwikoo();
     }
   });
-</script>
+</script> -->
