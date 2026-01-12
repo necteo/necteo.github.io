@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Virtual Box에 Ubuntu 설치'
-pubDate: 2025-12-26
+published: 2025-12-26
 description: 'Virtual Box에서 Ubuntu 설치 및 기본 설정들'
 author: 'necteo'
-tags: ['Ubuntu', 'Virtual Box', 'learning in public']
+tags: ['Ubuntu', 'Virtual Box']
+category: 'Ubuntu'
+draft: false
 ---
 
 ---

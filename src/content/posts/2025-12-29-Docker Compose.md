@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Docker Compose'
-pubDate: 2025-12-29
+published: 2025-12-29
 description: 'Ubuntu에서 Docker Compose 실행하기'
 author: 'necteo'
-tags: ['Ubuntu', 'Docker', 'learning in public']
+tags: ['Ubuntu', 'Docker']
+category: 'Docker'
+draft: false
 ---
 
 ---

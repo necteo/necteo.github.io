@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Pagination'
-pubDate: 2025-12-20
+published: 2025-12-20
 description: 'jekyll의 pagination 라이브러리 구성'
 author: 'necteo'
-tags: ['jekyll', 'blogging', 'learning in public']
+tags: ['Jekyll', 'Blogging']
+category: 'Blog'
+draft: false
 ---
 
 이번 테마에 페이지네이션이 있길래 살펴보고 있다

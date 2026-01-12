@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Ubuntu Docker 2'
-pubDate: 2025-12-24
+published: 2025-12-24
 description: 'Ubuntu에서 Docker 실행하기 2'
 author: 'necteo'
-tags: ['Ubuntu', 'Docker', 'learning in public']
+tags: ['Ubuntu', 'Docker']
+category: 'Docker'
+draft: false
 ---
 
 ---

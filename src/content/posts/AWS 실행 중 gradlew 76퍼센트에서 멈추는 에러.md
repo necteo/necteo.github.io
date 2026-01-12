@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'AWS 실행 중 gradlew가 76%에서 멈추는 에러'
-pubDate: 2026-01-06
+published: 2026-01-06
 description: 'gradlew를 했더니 76%에서 멈췄다'
 author: 'necteo'
-tags: ['aws', 'ubuntu', 'learning in public']
+tags: ['AWS', 'Ubuntu']
+category: 'AWS'
+draft: false
 ---
 
 AWS EC2에서 Spring Boot 프로젝트를 받아서 gradlew build를 했는데

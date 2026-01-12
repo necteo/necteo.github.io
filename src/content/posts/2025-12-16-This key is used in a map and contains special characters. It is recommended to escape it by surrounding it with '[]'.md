@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "This key is used in a map and contains special characters. It is recommended to escape it by surrounding it with '[]'"
-pubDate: 2025-12-16
+publishedDate: 2025-12-16
 description: 'application.yml 설정 중 만나버렸다'
 author: 'necteo'
-tags: ['jpa', 'yml', 'learning in public']
+tags: ['JPA', 'yml']
+category: 'ORM'
+draft: false
 ---
 
 jpa 사용을 위해

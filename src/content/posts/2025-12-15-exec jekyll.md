@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Exec Jekyll'
-pubDate: 2025-12-15
+published: 2025-12-15
 description: 'jekyll 실행과정'
 author: 'necteo'
-tags: ['jekyll', 'blogging', 'learning in public']
+tags: ['Jekyll', 'Blogging']
+category: 'Blog'
+draft: false
 ---
 
 테마를 적용했더니 갑자기 만난 오류
