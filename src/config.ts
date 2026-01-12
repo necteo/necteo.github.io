@@ -138,10 +138,10 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "블로그",//"美しいミズキ", // 主页横幅主标题
+			title: "블로그", //"美しいミズキ", // 主页横幅主标题
 
 			subtitle: [
-				"한글도 쓸 수 있을까"
+				"한글도 쓸 수 있을까",
 				// "特別なことはないけど、君がいると十分です",
 				// "今でもあなたは私の光",
 				// "君ってさ、知らないうちに私の毎日になってたよ",
@@ -251,7 +251,7 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://github.com/necteo",
 					external: true,
 					icon: "fa6-brands:github",
-				}
+				},
 			],
 		},
 		{
@@ -337,7 +337,7 @@ export const profileConfig: ProfileConfig = {
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/necteo",
-		}
+		},
 	],
 };
 
@@ -388,20 +388,20 @@ export const commentConfig: CommentConfig = {
 	// 	lang: SITE_LANG,
 	// },
 	giscus: {
-		repo: "necteo/necteo.github.io",        // 예: 'google/gemini-blog'
-    repoId: 'R_kgDOQl-0Gg',         // GitHub에서 발급받은 ID
-    category: 'Announcements',    // Discussions 카테고리명
-    categoryId: 'DIC_kwDOQl-0Gs4Cz2kj',   // 카테고리 ID
-    mapping: 'pathname',          // 포스트와 댓글을 연결하는 방식
-    strict: '0',
-    reactionsEnabled: '1',        // 반응(이모지) 활성화
-    emitMetadata: '0',
-    inputPosition: 'bottom',         // 입력창 위치 (top 또는 bottom)
-    theme: 'preferred_color_scheme',               // 테마
-    lang: 'ko',                   // 언어 설정
+		repo: "necteo/necteo.github.io", // 예: 'google/gemini-blog'
+		repoId: "R_kgDOQl-0Gg", // GitHub에서 발급받은 ID
+		category: "Announcements", // Discussions 카테고리명
+		categoryId: "DIC_kwDOQl-0Gs4Cz2kj", // 카테고리 ID
+		mapping: "pathname", // 포스트와 댓글을 연결하는 방식
+		strict: "0",
+		reactionsEnabled: "1", // 반응(이모지) 활성화
+		emitMetadata: "0",
+		inputPosition: "bottom", // 입력창 위치 (top 또는 bottom)
+		theme: "preferred_color_scheme", // 테마
+		lang: "ko", // 언어 설정
 		crossorigin: "anonymous",
-    loading: 'lazy'
-	}
+		loading: "lazy",
+	},
 };
 
 export const shareConfig: ShareConfig = {
@@ -662,4 +662,3 @@ export const umamiConfig = {
 <script defer src="XXXX.XXX" data-website-id="ABCD1234"></script>
   `.trim(), // 上面填你要插入的Script,不用再去Layout中插入
 } as const;
-
