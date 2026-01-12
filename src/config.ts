@@ -138,14 +138,15 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "美しいミズキ", // 主页横幅主标题
+			title: "블로그",//"美しいミズキ", // 主页横幅主标题
 
 			subtitle: [
-				"特別なことはないけど、君がいると十分です",
-				"今でもあなたは私の光",
-				"君ってさ、知らないうちに私の毎日になってたよ",
-				"君と話すと、なんか毎日がちょっと楽しくなるんだ",
-				"今日はなんでもない日。でも、ちょっとだけいい日",
+				"한글도 쓸 수 있을까"
+				// "特別なことはないけど、君がいると十分です",
+				// "今でもあなたは私の光",
+				// "君ってさ、知らないうちに私の毎日になってたよ",
+				// "君と話すと、なんか毎日がちょっと楽しくなるんだ",
+				// "今日はなんでもない日。でも、ちょっとだけいい日",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -247,22 +248,10 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				{
 					name: "GitHub",
-					url: "https://github.com/matsuzaka-yuki/Mizuki",
+					url: "https://github.com/necteo",
 					external: true,
 					icon: "fa6-brands:github",
-				},
-				{
-					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
-					external: true,
-					icon: "fa6-brands:bilibili",
-				},
-				{
-					name: "Gitee",
-					url: "https://gitee.com/matsuzakayuki/Mizuki",
-					external: true,
-					icon: "mdi:git",
-				},
+				}
 			],
 		},
 		{
@@ -345,30 +334,10 @@ export const profileConfig: ProfileConfig = {
 	},
 	links: [
 		{
-			name: "Bilibli",
-			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
-		},
-		{
-			name: "Gitee",
-			icon: "mdi:git",
-			url: "https://gitee.com/matsuzakayuki",
-		},
-		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
-		},
-		{
-			name: "Codeberg",
-			icon: "simple-icons:codeberg",
-			url: "https://codeberg.org",
-		},
-		{
-			name: "Discord",
-			icon: "fa6-brands:discord",
-			url: "https://discord.gg/MqW6TcQtVM",
-		},
+			url: "https://github.com/necteo",
+		}
 	],
 };
 
@@ -413,11 +382,26 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
-	twikoo: {
-		envId: "https://twikoo.vercel.app",
-		lang: SITE_LANG,
-	},
+	enable: true, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
+	// twikoo: {
+	// 	envId: "https://twikoo.vercel.app",
+	// 	lang: SITE_LANG,
+	// },
+	giscus: {
+		repo: "necteo/necteo.github.io",        // 예: 'google/gemini-blog'
+    repoId: 'R_kgDOQl-0Gg',         // GitHub에서 발급받은 ID
+    category: 'Announcements',    // Discussions 카테고리명
+    categoryId: 'DIC_kwDOQl-0Gs4Cz2kj',   // 카테고리 ID
+    mapping: 'pathname',          // 포스트와 댓글을 연결하는 방식
+    strict: '0',
+    reactionsEnabled: '1',        // 반응(이모지) 활성화
+    emitMetadata: '0',
+    inputPosition: 'bottom',         // 입력창 위치 (top 또는 bottom)
+    theme: 'preferred_color_scheme',               // 테마
+    lang: 'ko',                   // 언어 설정
+		crossorigin: "anonymous",
+    loading: 'lazy'
+	}
 };
 
 export const shareConfig: ShareConfig = {

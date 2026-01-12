@@ -255,8 +255,25 @@ export type PermalinkConfig = {
 
 export type CommentConfig = {
 	enable: boolean; // 是否启用评论功能
-	twikoo?: TwikooConfig;
+	// twikoo?: TwikooConfig;
+	giscus?: GiscusConfig;
 };
+
+type GiscusConfig = {
+	repo: string;
+	repoId: string;
+	category: string;
+	categoryId: string;
+	mapping: string;
+	strict: string;
+	reactionsEnabled: string;
+	emitMetadata: string;
+	inputPosition: string;
+	theme: string;
+	lang: string;
+	crossorigin: string;
+	loading: string;
+}
 
 type TwikooConfig = {
 	envId: string;
