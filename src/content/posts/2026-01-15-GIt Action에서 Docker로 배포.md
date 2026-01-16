@@ -76,6 +76,11 @@ jobs:
                   EOF
 ```
 
+ED25519키 생성
+```bash
+ssh-keygen -t ed25519 -C '[EMAIL]'
+```
+
 ### 에러들
 
 - key가 안맞는 에러
