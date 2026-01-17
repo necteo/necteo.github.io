@@ -5,8 +5,9 @@ pinned: false
 description: A simple example of a Markdown blog post with Mermaid.
 tags: [Markdown, Blogging, Mermaid]
 category: Examples
-draft: false
+draft: true
 ---
+
 # Complete Guide to Markdown with Mermaid Diagrams
 
 This article demonstrates how to create various complex diagrams using Mermaid in Markdown documents, including flowcharts, sequence diagrams, Gantt charts, class diagrams, and state diagrams.
@@ -14,9 +15,6 @@ This article demonstrates how to create various complex diagrams using Mermaid i
 ## Flowchart Example
 
 Flowcharts are excellent for representing processes or algorithm steps.
-
-
-
 
 ```mermaid
 graph TD
@@ -54,7 +52,7 @@ sequenceDiagram
     Server->>Database: Query User Credentials
     Database-->>Server: Return User Data
     Server-->>WebApp: Return Auth Result
-    
+
     alt Auth Successful
         WebApp->>User: Show Welcome Page
         WebApp->>Server: Request User Data
@@ -77,22 +75,22 @@ gantt
     title Website Development Project Timeline
     dateFormat  YYYY-MM-DD
     axisFormat  %m/%d
-    
+
     section Design Phase
     Requirements Analysis      :a1, 2023-10-01, 7d
     UI Design                 :a2, after a1, 10d
     Prototype Creation        :a3, after a2, 5d
-    
+
     section Development Phase
     Frontend Development      :b1, 2023-10-20, 15d
     Backend Development       :b2, after a2, 18d
     Database Design           :b3, after a1, 12d
-    
+
     section Testing Phase
     Unit Testing              :c1, after b1, 8d
     Integration Testing       :c2, after b2, 10d
     User Acceptance Testing   :c3, after c2, 7d
-    
+
     section Deployment
     Production Deployment     :d1, after c3, 3d
     Launch                    :milestone, after d1, 0d
@@ -113,7 +111,7 @@ classDiagram
         +logout()
         +updateProfile()
     }
-    
+
     class Article {
         +String title
         +String content
@@ -123,21 +121,21 @@ classDiagram
         +edit()
         +delete()
     }
-    
+
     class Comment {
         +String content
         +Date commentDate
         +addComment()
         +deleteComment()
     }
-    
+
     class Category {
         +String name
         +String description
         +addArticle()
         +removeArticle()
     }
-    
+
     User "1" -- "*" Article : writes
     User "1" -- "*" Comment : posts
     Article "1" -- "*" Comment : has
@@ -151,14 +149,14 @@ State diagrams show the sequence of states an object goes through during its lif
 ```mermaid
 stateDiagram-v2
     [*] --> Draft
-    
+
     Draft --> UnderReview : submit
     UnderReview --> Draft : reject
     UnderReview --> Approved : approve
     Approved --> Published : publish
     Published --> Archived : archive
     Published --> Draft : retract
-    
+
     state Published {
         [*] --> Active
         Active --> Hidden : temporarily hide
@@ -166,7 +164,7 @@ stateDiagram-v2
         Active --> [*]
         Hidden --> [*]
     }
-    
+
     Archived --> [*]
 ```
 

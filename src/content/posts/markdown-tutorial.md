@@ -5,10 +5,10 @@ pinned: true
 description: A simple example of a Markdown blog post.
 tags: [Markdown, Blogging]
 category: Examples
-licenseName: "Unlicensed"
+licenseName: 'Unlicensed'
 author: emn178
-sourceLink: "https://github.com/emn178/markdown"
-draft: false
+sourceLink: 'https://github.com/emn178/markdown'
+draft: true
 ---
 
 # Markdown Tutorial
@@ -612,7 +612,7 @@ Preview:
 
 ---
 
-This is [an example](http://example.com/ "Title") inline link.
+This is [an example](http://example.com/ 'Title') inline link.
 
 [This link](http://example.net/) has no title attribute.
 
@@ -647,7 +647,7 @@ Preview:
 
 ---
 
-[id]: http://example.com/ "Optional Title Here"
+[id]: http://example.com/ 'Optional Title Here'
 
 This is [an example][id] reference-style link.
 
@@ -808,7 +808,7 @@ Preview:
 
 ![Alt text](https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp)
 
-![Alt text](https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp "Optional title")
+![Alt text](https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp 'Optional title')
 
 ---
 
@@ -831,7 +831,7 @@ Preview:
 
 ---
 
-[img id]: https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp "Optional title attribute"
+[img id]: https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp 'Optional title attribute'
 
 ![Alt text][img id]
 
