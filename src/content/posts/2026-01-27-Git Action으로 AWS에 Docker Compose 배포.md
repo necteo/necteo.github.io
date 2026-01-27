@@ -1,0 +1,96 @@
+---
+title: 'Git Action으로 AWS에 Docker Compose 배포'
+published: 2026-01-27
+description: 'Git Action으로 Docker 자동 배포 3'
+pinned: false
+author: 'necteo'
+image: ''
+tags: ['AWS', 'Docker', 'Ubuntu']
+category: 'AWS'
+draft: false
+---
+
+### docker-compose.yml
+
+```yml
+services:
+  app:
+    image: [USER_NAME]/spring-devs
+    ports:
+      - '8080:8080'
+```
+
+### deploy.yml
+
+```yml
+name: Deploy with DockerHub to Ubuntu Server
+
+on:
+  push:
+    #브런치 => main에서 Commit
+    branches:
+      - main
+# Commit시에 작업
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 현재 repository 안에서 체크 아웃 설정
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          # Java JDK17 설치 및 환경변수 => 17버전으로 빌드하기 위한 설정
+
+        # gradlew => 우분투에서 실행 권한이 없는 경우 => 실행 권한 추가
+        # +r(읽기) +w(쓰기) +x(실행)
+      - name: Set gradlew permissions
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew clean build
+        # .jar파일 생성 => clean은 전체 삭제 => 다시 build
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        # docker 로그인
+
+        # docker build : image를 생성 => dockerhub에 전송
+      - name: Build and Push Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/spring-cicd:latest .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/spring-cicd:latest
+      # SSH => 개인키를 가지고 AWS에 접속
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+      # 등록 => 서버키가 등록
+      - name: Add known hosts
+        run: ssh-keyscan -t ed25519 13.220.65.35 >> ~/.ssh/known_hosts
+      # 실행
+      # container명 => 같으면 안된다
+      # 1. 정지 docker stop image명
+      # 2. 삭제 docker rm image명
+      # 3. dockerhub에서 읽기 pull
+      # 4. 실행명령 : run
+      - name: Deploy on server using DockerHub image
+        run: |
+          ssh ubuntu@13.220.65.35 << 'EOF'
+            cd /home/ubuntu/app
+            docker compose pull
+            docker compose down
+            docker compose up -d
+            # docker stop spring-cicd || true
+            # docker rm spring-cicd || true
+            # docker pull ${{ secrets.DOCKERHUB_USERNAME }}/spring-cicd:latest
+            # docker run -d --name spring-cicd -p 9090:9090 ${{ secrets.DOCKERHUB_USERNAME }}/spring-cicd:latest
+          EOF
+```
+
+docker-compose.yml을 못 찾을 땐
+~/app으로 파일을 복사해보자
