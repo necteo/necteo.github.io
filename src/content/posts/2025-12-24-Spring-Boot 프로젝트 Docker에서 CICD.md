@@ -4,7 +4,7 @@ published: 2025-12-24
 description: 'Ubuntu에서 Spring Boot 프로젝트 Docker로 실행하기'
 author: 'necteo'
 tags: ['Ubuntu', 'Docker', 'Spring Boot']
-category: 'Docker'
+category: 'CI/CD'
 draft: false
 ---
 

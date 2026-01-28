@@ -6,7 +6,7 @@ pinned: false
 author: 'necteo'
 image: ''
 tags: ['Ubuntu', 'Docker', 'Kubernetes']
-category: 'Docker'
+category: 'CI/CD'
 draft: false
 ---
 

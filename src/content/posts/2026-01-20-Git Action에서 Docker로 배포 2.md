@@ -6,7 +6,7 @@ pinned: false
 author: 'necteo'
 image: ''
 tags: ['AWS', 'Docker', 'Ubuntu']
-category: 'AWS'
+category: 'CI/CD'
 draft: false
 ---
 

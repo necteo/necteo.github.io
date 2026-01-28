@@ -5,7 +5,7 @@ description: 'Git Action으로 Docker 자동 배포'
 author: 'necteo'
 image: ''
 tags: ['AWS', 'Docker', 'Ubuntu']
-category: 'AWS'
+category: 'CI/CD'
 draft: false
 ---
 

@@ -4,7 +4,7 @@ published: 2025-12-24
 description: 'Ubuntu에서 Docker 실행하기 2'
 author: 'necteo'
 tags: ['Ubuntu', 'Docker']
-category: 'Docker'
+category: 'CI/CD'
 draft: false
 ---
 
