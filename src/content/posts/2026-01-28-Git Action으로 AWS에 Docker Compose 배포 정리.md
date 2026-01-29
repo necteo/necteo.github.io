@@ -23,7 +23,7 @@ draft: false
    - sudo apt-get update
    - sudo apt-get install docker-ce docker-ce-cli containerd.io -y
    - sudo usermod -aG docker ubuntu
-   - newgrp ubuntu
+   - newgrp docker
 6. ssh 설정
    - ssh-keygen -t ed25519 -C '[EMAIL]'
    - cat id_ed25519.pub >> authorized_keys

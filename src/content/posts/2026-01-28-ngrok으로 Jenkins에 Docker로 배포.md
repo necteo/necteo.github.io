@@ -66,13 +66,13 @@ Trigger
 
 Pipeline script from SCM
 
-- SCM: Git
-- branch: main
+- SCM: `Git`
+- branch: `main`
 
 ### Github Repository - Settings - Webhooks
 
-- Payload URL: [ngrok forwarding url]/github-webhook/
-- Content type: application/json
+- Payload URL: `[ngrok forwarding url]/github-webhook/`
+- Content type: `application/json`
 
 ### Jenkinsfile
 
@@ -416,15 +416,113 @@ Kind: SSH Username with private key
 - Private Key
   - Enter directly Key: id_ed25519 내용
 
+##### rsync로 AWS에 war파일 옮기고 백그라운드 실행
+
+```
+pipeline {
+	agent any
+
+	// 전역변수 => ${SERVER_IP}
+	environment {
+		SERVER_IP = "34.224.165.166"
+		SERVER_USER = "ubuntu"
+		APP_DIR = "~/app"
+		JAR_NAME = "SpringTotalProject-0.0.1-SNAPSHOT.war"
+	}
+
+	stages {
+		/*
+		연결 확인 = ngrok
+		stage('Git Check Test') {
+			steps {
+				git branch: 'main',
+				url: 'https://github.com/necteo/SpringTotalProject.git'
+			}
+		}
+
+		stage('Check Git Info') {
+			steps {
+				sh '''
+						echo "===Git Info==="
+						git branch
+						git log -1
+					 '''
+			}
+		}
+		*/
+		// 감지 = main : push (commit)
+		stage('Check Out') {
+			steps {
+				echo 'Git Checkout'
+				checkout scm
+			}
+		}
+
+		// gradlew build => war파일을 다시 생성
+		stage('Gradle Permission') {
+			steps {
+				sh 'chmod +x gradlew'
+			}
+		}
+
+		// build 시작
+		stage('Gradle Build') {
+			steps {
+				sh './gradlew clean build'
+			}
+		}
+
+		// war파일 전송 = rsync / scp
+		stage('Deploy = rsync') {
+			steps {
+				sshagent(credentials:['SERVER_KEY']) {
+					sh """
+							rsync -avz -e 'ssh -o StrictHostKeyChecking=no' build/libs/*.war ${SERVER_USER}@${SERVER_IP}:${APP_DIR}
+						 """
+				}
+			}
+		}
+
+		// 실행 명령
+		stage('Run Application') {
+			steps {
+				sshagent(credentials:['SERVER_KEY']) {
+					sh """
+							ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} << 'EOF'
+								pkill -f 'java -jar' || true
+								nohup java -jar ${APP_DIR}/${JAR_NAME} > log.txt 2>&1 &
+EOF
+						 """
+				}
+			}
+		}
+	}
+
+	post {
+		success {
+			echo '실행 성공'
+		}
+		failure {
+			echo '실행 실패'
+		}
+	}
+}
+```
+
+##### Docker로 배포
+
 ```
 pipeline {
 	agent any
 
 	environment {
-		DOCKER_IMAGE = "necteo/awscicd-app"
+		DOCKER_IMAGE = "necteo/total-app"
 		DOCKER_TAG = "latest"
-		EC2_HOST = "3.234.226.241"
+		CONTAINER = "total-app"
+		EC2_HOST = "34.224.165.166"
 		EC2_USER = "ubuntu"
+		PORT = "9090"
+		COMPOSE_FILE = "~/app/docker-compose.yml"
 	}
 
 	stages {
@@ -474,20 +572,39 @@ pipeline {
 				sh 'docker push ${DOCKER_IMAGE}:${DOCKER_TAG}'
 			}
 		}
-
+		/*
 		stage('Add SSH key') {
 			steps {
 				echo 'Add SSH key'
-				sshagent(credentials: ['ec2-ssh-key']) {
+				sshagent(credentials: ['SERVER_KEY']) {
 					sh """
 							ssh-keyscan -t ed25519 ${EC2_HOST} >> ~/.ssh/known_hosts
 
 							ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << 'EOF'
-								docker stop awscicd || true
-								docker rm awscicd || true
+								docker stop ${CONTAINER} || true
+								docker rm ${CONTAINER} || true
 								docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}
-								docker run --name awscicd -it -d -p 9090:9090 ${DOCKER_IMAGE}:${DOCKER_TAG}
+								docker run --name ${CONTAINER} -d -p ${PORT}:${PORT} ${DOCKER_IMAGE}:${DOCKER_TAG}
 EOF
+						 """
+				}
+			}
+		}
+		*/
+
+		stage('Deploy Docker Compose') {
+			steps {
+				echo 'Add SSH key'
+				sshagent(credentials: ['SERVER_KEY']) {
+					sh """
+							ssh-keyscan -t ed25519 ${EC2_HOST} >> ~/.ssh/known_hosts
+							ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} '
+								docker compose -f ${COMPOSE_FILE} down || true
+								docker stop ${CONTAINER} || true
+								docker rm ${CONTAINER} || true
+								docker pull ${DOCKER_IMAGE}
+								docker compose -f ${COMPOSE_FILE} up -d
+								'
 						 """
 				}
 			}
@@ -504,3 +621,33 @@ EOF
 	}
 }
 ```
+
+이 경우에 Jenkins 서버는 Virtual Box에 설치한 로컬 Ubuntu다
+
+ngrok으로 도메인 부여 후 연결하는 것
+
+##### ssh에서 docker에 올려야 하는 이유
+
+```
+ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} '
+	docker compose -f ${COMPOSE_FILE} down || true
+	docker stop ${CONTAINER} || true
+	docker rm ${CONTAINER} || true
+	docker pull ${DOCKER_IMAGE}
+	docker compose -f ${COMPOSE_FILE} up -d
+	'
+```
+
+밖에서 하면 jenkins 서버에서 명령어 실행되는 거 같다
+
+### 결론
+
+Jenkins는 Github Actions 대신 사용하는 느낌
+
+로컬이 아닌 public 공간에서 사용가능한 IP가 있어야 하지만
+
+그것만 된다면 Github Actions보다 속도가 빠른듯?
+
+우분투 연습도 되고 좋은 것 같다
+
+그런데 여기서 쿠버네티스는 어디에 끼는거지?

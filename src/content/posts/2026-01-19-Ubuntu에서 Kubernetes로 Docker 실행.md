@@ -13,7 +13,7 @@ draft: false
 ### Minikube 설치
 
 ```bash
-:$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
@@ -33,7 +33,7 @@ minikube delete
 ### kubectl 설치
 
 ```bash
-:$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 
@@ -41,7 +41,7 @@ kubectl 설치 시 터미널 위치가 /usr/local/bin같은 곳이면
 디렉터리 생성이 안돼서 ~/같은 곳에서 해야함
 
 ```bash
-:/usr/local/bin$ kubectl version --client
+:~$ kubectl version --client
 Client Version: v1.35.0
 Kustomize Version: v5.7.1
 ```
@@ -49,7 +49,7 @@ Kustomize Version: v5.7.1
 ### 상태 확인
 
 ```bash
-:/usr/local/bin$ minikube status
+:~$ minikube status
 minikube
 type: Control Plane
 host: Running
@@ -59,13 +59,13 @@ kubeconfig: Configured
 ```
 
 ```bash
-:/usr/local/bin$ kubectl get nodes
+:~$ kubectl get nodes
 NAME       STATUS   ROLES           AGE     VERSION
 minikube   Ready    control-plane   9m39s   v1.34.0
 ```
 
 ```bash
-:/usr/local/bin$ kubectl get pods --all-namespaces
+:~$ kubectl get pods --all-namespaces
 NAMESPACE     NAME                               READY   STATUS    RESTARTS      AGE
 kube-system   coredns-66bc5c9577-vvq5v           1/1     Running   0             10m
 kube-system   etcd-minikube                      1/1     Running   0             10m
@@ -77,7 +77,7 @@ kube-system   storage-provisioner                1/1     Running   1 (10m ago)  
 ```
 
 ```bash
-:/usr/local/bin$ minikube stop
+:~$ minikube stop
 ✋  Stopping node "minikube"  ...
 🛑  Powering off "minikube" via SSH ...
 🛑  1 node stopped.
@@ -125,6 +125,7 @@ spec:
           image: necteo/cicd-app
           ports:
             - containerPort: 8080
+---
 apiVersion: v1
 kind: Service
 metadata:
