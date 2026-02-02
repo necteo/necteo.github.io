@@ -27,7 +27,7 @@ draft: false
 ### Backend
 
 - **Java 17**
-- **Spring Boot 3.5.1**
+- **Spring Boot 3.5.10**
 - **MyBatis**
 - **Oracle Database** - 메인 데이터베이스
 - **WebSocket (STOMP)** - 실시간 양방향 통신
@@ -329,15 +329,11 @@ stompClient.connect({}, () => {
 
 ## 👥 팀원
 
-| 이름   | 역할       | GitHub                           |
-| ------ | ---------- | -------------------------------- |
-| 홍길동 | Full Stack | [@hong](https://github.com/hong) |
-| 김철수 | Backend    | [@kim](https://github.com/kim)   |
-| 이영희 | Frontend   | [@lee](https://github.com/lee)   |
-
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 배포됩니다.
+| 이름   | 역할       | GitHub                                  |
+| ------ | ---------- | --------------------------------------- |
+| 전성환 | Full Stack | [Github](https://github.com/masterchun) |
+| 신재화 | Full Stack | [Github](https://github.com/necteo)     |
+| 손다솔 | Frontend   | [Github](https://github.com/dasolson)   |
 
 ## 🙏 감사의 말
 
@@ -345,11 +341,3 @@ stompClient.connect({}, () => {
 - Vue.js 커뮤니티
 - Let's Encrypt
 - DuckDNS
-
-## 📞 문의
-
-프로젝트에 대한 질문이나 제안사항이 있으시면 이슈를 등록해주세요.
-
----
-
-**⭐ 이 프로젝트가 도움이 되었다면 Star를 눌러주세요!**
