@@ -1,7 +1,7 @@
 // 本地番剧数据配置
 export type AnimeItem = {
 	title: string;
-	status: "watching" | "completed" | "planned";
+	status: 'watching' | 'completed' | 'planned';
 	rating: number;
 	cover: string;
 	description: string;
@@ -18,22 +18,22 @@ export type AnimeItem = {
 
 const localAnimeList: AnimeItem[] = [
 	{
-		title: "Lycoris Recoil",
-		status: "completed",
+		title: 'Lycoris Recoil',
+		status: 'completed',
 		rating: 9.8,
-		cover: "/assets/anime/lkls.webp",
+		cover: '/assets/anime/lkls.webp',
 		description: "Girl's gunfight",
-		episodes: "12 episodes",
-		year: "2022",
-		genre: ["Action", "Slice of life"],
-		studio: "A-1 Pictures",
-		link: "https://www.bilibili.com/bangumi/media/md28338623",
+		episodes: '12 episodes',
+		year: '2022',
+		genre: ['Action', 'Slice of life'],
+		studio: 'A-1 Pictures',
+		link: 'https://www.bilibili.com/bangumi/media/md28338623',
 		progress: 12,
 		totalEpisodes: 12,
-		startDate: "2022-07",
-		endDate: "2022-09",
+		startDate: '2022-07',
+		endDate: '2022-09',
 	},
-	{
+	/*{
 		title: "Yowamushi Pedal",
 		status: "watching",
 		rating: 9.5,
@@ -96,7 +96,8 @@ const localAnimeList: AnimeItem[] = [
 		totalEpisodes: 12,
 		startDate: "2025-07",
 		endDate: "2025-10",
-	},
+	},*/
 ];
 
 export default localAnimeList;
+

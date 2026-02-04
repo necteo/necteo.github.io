@@ -96,12 +96,18 @@ export const siteConfig: SiteConfig = {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
 			desktop: [
-				'/assets/desktop-banner/1.webp',
-				'/assets/desktop-banner/2.webp',
-				'/assets/desktop-banner/3.webp',
-				'/assets/desktop-banner/4.webp',
-				'/assets/desktop-banner/5.webp',
-				'/assets/desktop-banner/6.webp',
+				// '/assets/desktop-banner/1.webp',
+				// '/assets/desktop-banner/2.webp',
+				// '/assets/desktop-banner/3.webp',
+				// '/assets/desktop-banner/4.webp',
+				// '/assets/desktop-banner/5.webp',
+				// '/assets/desktop-banner/6.webp',
+				'/assets/desktop-banner/7.jpg',
+				'/assets/desktop-banner/9.jpg',
+				'/assets/desktop-banner/9.webp',
+				'/assets/desktop-banner/8.jpg',
+				'/assets/desktop-banner/10.jpg',
+				'/assets/desktop-banner/11.jpg',
 			], // 桌面横幅图片
 			mobile: [
 				'/assets/mobile-banner/1.webp',
@@ -421,7 +427,7 @@ export const announcementConfig: AnnouncementConfig = {
 };
 
 export const musicPlayerConfig: MusicPlayerConfig = {
-	enable: true, // 启用音乐播放器功能
+	enable: false, // 启用音乐播放器功能
 	mode: 'meting', // 音乐播放器模式，可选 "local" 或 "meting"
 	meting_api:
 		'https://www.bilibili.uno/api?server=:server&type=:type&id=:id&auth=:auth&r=:r', // Meting API 地址
@@ -620,7 +626,7 @@ export const sakuraConfig: SakuraConfig = {
 
 // Pio 看板娘配置
 export const pioConfig: import('./types/config').PioConfig = {
-	enable: true, // 启用看板娘
+	enable: false, // 启用看板娘
 	models: ['/pio/models/pio/model.json'], // 默认模型路径
 	position: 'left', // 默认位置在右侧
 	width: 280, // 默认宽度
