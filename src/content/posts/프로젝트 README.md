@@ -7,7 +7,7 @@ author: 'necteo'
 image: ''
 tags: ['Blogging', 'README']
 category: 'Blog'
-draft: false
+draft: true
 ---
 
 # 🎬 All Movie - 영화 예매 및 매점 통합 시스템
