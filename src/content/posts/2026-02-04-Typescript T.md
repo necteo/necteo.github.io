@@ -7,7 +7,7 @@ author: 'necteo'
 image: ''
 tags: ['Typescript', 'Blogging']
 category: 'Front'
-draft: true
+draft: false
 ---
 
 Typescript 제네릭에 T를 선언했는데
