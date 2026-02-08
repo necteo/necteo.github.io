@@ -164,15 +164,113 @@ erDiagram
 
 ---
 
-## API 설계 (선택)
+## API 설계
 
-| Method | URL           | 설명             |
-| ------ | ------------- | ---------------- |
-| POST   | /member/login | 로그인           |
-| POST   | /member/login | 로그아웃         |
-| POST   | /member/login | 회원가입         |
-| GET    | /member/login | 아이디 중복 확인 |
-| PUT    | /member/login | 회원정보 수정    |
+**MainController**
+| Method | URL | 설명 |
+| --- | - | ---------- |
+| GET | / | 메인 페이지 |
+
+**MainRestController**
+| Method | URL | 설명 |
+| ------ | ---------------------- | ---------------- |
+|GET|/main/list_vue|메인페이지 목록 조회|
+
+**MemberController**
+| Method | URL | 설명 |
+| ------ | ---------------------- | ---------------- |
+| GET | /member/login | 로그인 페이지 |
+| POST | /member/login | 로그인 |
+| POST | /member/logout | 로그아웃 |
+| GET | /member/join | 회원가입 페이지 |
+| POST | /member/join_ok | 회원가입 |
+| GET | /member/mypage | 마이페이지 |
+| GET | /mypage/order/tracking | 주문 추적 페이지 |
+
+**MemberRestController**
+| Method | URL | 설명 |
+| ------ | -------------------------------------- | ---------------- |
+| GET | /member/idCheck_vue/?user_id={user_id} | 아이디 중복 확인 |
+| GET | /mypage/bookingListData | 예약 목록 확인 |
+| PATCH | /mypage/bookingCancel | 예약 취소 |
+| GET | /member/info | 회원 정보 조회 |
+
+**MovieController**
+| Method | URL | 설명 |
+| ------ | ---------------------- | ---------------- |
+| GET | /movie/list?page={page} | 영화 목록 페이지 |
+| GET | /movie/detail?movie-id={movie-id} | 영화 상세 페이지 |
+
+**ReviewRestController**
+| Method | URL | 설명 |
+| ------ | ---------------------- | ---------------- |
+|GET|/review/movie/list?movie-id={movie-id}|영화 리뷰 조회|
+|POST|/review/movie/insert|영화 리뷰 작성|
+
+**BookingController**
+| Method | URL | 설명 |
+| ------ | ---------------------- | ---------------- |
+|GET|/booking|영화 예매 페이지|
+|POST|/booking/seat?id={id}|영화 예매 좌석 선택 페이지|
+
+**BookingRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+|POST|/booking/data/|영화 예매 가능 목록 조회|
+|POST|/seat/data|영화 예매 가능 좌석 조회|
+|POST|/seat/booking_info|영화 예매 일정, 가격 조회|
+|POST|/seat/validation|영화 예매 좌석 검증|
+|POST|/seat/booking_seat|영화 예매 좌석 선택|
+|POST|/seat/booking_cancel|영화 예매 취소|
+|POST|/booking/complete|영화 예매 완료|
+
+**StoreController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**StoreRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**StockRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**CartRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**OrderRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**PaymentRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**ProductRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**ManagerOrderRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**BoardController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**BoardRestController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**HelpdeskController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
+
+**GroupvisitController**
+| Method | URL | 설명 |
+| ------ | --- | ---- |
 
 ---
 
@@ -343,13 +441,6 @@ stompClient.connect({}, () => {
 	console.log('WebSocket 연결 성공');
 });
 ```
-
-## 📊 프로젝트 통계
-
-- **총 개발 기간**: 2025.12.15 ~ 2026.01.30
-- **총 코드 라인**: ~XX,XXX lines
-- **API 엔드포인트**: XX개
-- **데이터베이스 테이블**: 15개
 
 ## 👥 팀원
 
