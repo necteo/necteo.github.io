@@ -166,9 +166,13 @@ erDiagram
 
 ## API 설계 (선택)
 
-| Method | URL  | 설명 |
-| ------ | ---- | ---- |
-| GET    | /api |      |
+| Method | URL           | 설명             |
+| ------ | ------------- | ---------------- |
+| POST   | /member/login | 로그인           |
+| POST   | /member/login | 로그아웃         |
+| POST   | /member/login | 회원가입         |
+| GET    | /member/login | 아이디 중복 확인 |
+| PUT    | /member/login | 회원정보 수정    |
 
 ---
 
