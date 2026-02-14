@@ -85,7 +85,7 @@ export const skillsData: Skill[] = [
 		id: 'nodejs',
 		name: 'Node.js',
 		description:
-			'A JavaScript runtime based on Chrome V8 engine, used for server-side development.',
+			'A JavaScript runtime based on Chrome V8 engine, used for 서버 개발',
 		icon: 'logos:nodejs-icon',
 		category: 'backend',
 		level: 'beginner',
