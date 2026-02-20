@@ -38,14 +38,15 @@ draft: true
 
 - **Java 17**
 - **Spring Boot 3.5.10**
+- **Oracle Database 21C** - 메인 데이터베이스
 - **MyBatis**
-- **Oracle Database** - 메인 데이터베이스
+- **REST API**
 - **WebSocket (STOMP)** - 실시간 양방향 통신
 
 ### Frontend
 
-- **Vue.js 3** - 프론트엔드 프레임워크
-- **Pinia** - 상태 관리
+- **Vue.js 3** - CDN 방식, JSP 내 구성
+- **Pinia** - 전역 상태 관리
 - **JSP** - 서버 사이드 렌더링
 - **Bootstrap** - UI 프레임워크
 - **Axios** - HTTP 클라이언트
@@ -77,7 +78,10 @@ draft: true
 
 #### 영화 예매
 
-- 영화 예매 시 날짜 및 극장 검증
+- 지역 및 영화관 선택
+- 상영 스케줄 조회
+- 좌석 선택 및 예매
+- 좌석 중복 예매 방지 로직
 - 실시간 결제 (KG Inicis + Iamport)
 
 #### 매점 주문
@@ -115,6 +119,8 @@ draft: true
   - `rejected` (자동 환불)
 - 오늘의 주문 통계 대시보드
 - 30초 자동 새로고침 (WebSocket)
+
+### 3. 관리자 기능
 
 ## 🗄 데이터베이스 설계
 
@@ -341,7 +347,7 @@ Oracle Database
 ### 사전 요구사항
 
 - Java 17 이상
-- Oracle Database
+- Oracle Database 21c
 - Gradle 8.x
 
 ### 로컬 실행
@@ -408,8 +414,8 @@ pipeline {
                 sshagent(['ec2-ssh-key']) {
                     sh '''
                         scp build/libs/*.war ubuntu@your-server:/home/ubuntu/app/
-                        ssh ubuntu@your-server 'pkill -f app.jar || true'
-                        ssh ubuntu@your-server 'nohup java -jar /home/ubuntu/app/app.jar &'
+                        ssh ubuntu@your-server 'pkill -f app.war || true'
+                        ssh ubuntu@your-server 'nohup java -jar /home/ubuntu/app/app.war &'
                     '''
                 }
             }
@@ -446,13 +452,6 @@ stompClient.connect({}, () => {
 
 | 이름   | 역할       | GitHub                                  |
 | ------ | ---------- | --------------------------------------- |
-| 전성환 | Full Stack | [Github](https://github.com/masterchun) |
+| 전성환 | Full Stack | [Github](https://github.com/masterjeon) |
 | 신재화 | Full Stack | [Github](https://github.com/necteo)     |
 | 손다솔 | Full Stack | [Github](https://github.com/dasolson)   |
-
-## 🙏 감사의 말
-
-- Spring Boot 커뮤니티
-- Vue.js 커뮤니티
-- Let's Encrypt
-- DuckDNS
