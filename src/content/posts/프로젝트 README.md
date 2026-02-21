@@ -27,7 +27,7 @@ draft: true
   영화관의 경험적 가치를 보완할 수 있는 웹 서비스를 기획하였습니다.
 - **대상 사용자**
   - 영화관 이용객
-  - 영화관 관리자 및 직원
+  - 영화관 관리자 및 매니저
 - **총 개발 기간**: 2025.12.15 ~ 2026.01.30
 
 **배포 URL**: [https://sist-all-movie.duckdns.org](https://sist-all-movie.duckdns.org)
@@ -66,6 +66,21 @@ draft: true
 - **KG Inicis** - PG사
 - **Iamport** - 결제 통합 API
 
+## 📌 프로젝트 특징
+
+- JSP 환경에서 Vue(CDN) + Pinia를 결합하여 점진적으로 SPA 구조를 구성
+- 프런트엔드 상태를 Pinia 스토어로 통합 관리하여 컴포넌트 간 데이터 전달 구조 개선
+- 프런트엔드와 백엔드 분리 구조(Spring REST API)로 역할 분담 명확화
+- 영화 스케줄, 좌석 정보 등 사용자 선택에 따라 동적으로 변경되는 UI 구현
+
+## 🧠 기술적 경험
+
+- Vue(CDN) + Pinia를 사용해 JSP 환경에서도 전역 상태 관리 구조 설계
+- 프런트엔드에서 사용자 편의에 맞게 데이터 가공,  
+  백엔드에서는 검증 및 비즈니스 로직 처리
+- REST API 기반으로 프런트엔드-백엔드 분리 아키텍처 경험
+- Jenkins를 이용한 빌드 및 배포 자동화(CI/CD 파이프라인 구성)
+
 ## ✨ 주요 기능
 
 ### 1. 사용자 기능
@@ -83,6 +98,7 @@ draft: true
 - 좌석 선택 및 예매
 - 좌석 중복 예매 방지 로직
 - 실시간 결제 (KG Inicis + Iamport)
+- 마이페이지 내 예매 관리
 
 #### 매점 주문
 
@@ -103,6 +119,12 @@ draft: true
 - 실시간 주문 상태 확인
 - WebSocket을 통한 푸시 알림
 
+#### 고객센터
+
+- 공지사항 조회
+- 1:1 문의 조회/작성/수정/삭제
+- 대관/단체 문의 조회/작성/수정/삭제
+
 ### 2. 매니저 기능
 
 #### 재고 관리
@@ -121,6 +143,12 @@ draft: true
 - 30초 자동 새로고침 (WebSocket)
 
 ### 3. 관리자 기능
+
+#### 고객센터 관리
+
+- 공지사항 조회/작성/수정/삭제
+- 1:1 문의 조회 및 답변
+- 대관/단체 문의 조회 및 답변
 
 ## 🗄 데이터베이스 설계
 
@@ -337,10 +365,13 @@ Oracle Database
 
 ### 개선 필요 사항
 
+- [ ] Spring Security와 JWT를 적용해 사용자 인증 기반 기능 구현
+- [ ] Spring Security 적용을 통한 사용자 인증 및 권한 처리
+- [ ] 프런트엔드 캐싱 전략 개선
+- [ ] 좌석 선택 알고리즘 개선
 - [ ] 재고 동시성 제어 (낙관적 락)
 - [ ] Redis 캐싱 도입
 - [ ] 단위 테스트 작성
-- [ ] 로깅 체계 구축 (ELK Stack)
 
 ## 📦 설치 및 실행
 
@@ -371,83 +402,6 @@ spring.datasource.password=your_password
 http://localhost:8000
 ```
 
-## 🌐 프로덕션 배포
-
-### AWS EC2 배포
-
-```bash
-# 1. EC2 인스턴스 생성 (Ubuntu 24.04)
-
-# 2. 필수 패키지 설치
-sudo apt update
-sudo apt install openjdk-17-jdk nginx certbot python3-certbot-nginx -y
-
-# 3. 애플리케이션 배포
-scp build/libs/*.war ubuntu@your-server:/home/ubuntu/app/app.war
-
-# 4. Nginx 설정
-sudo nano /etc/nginx/sites-available/default
-# (Nginx 설정 추가)
-
-# 5. Let's Encrypt 인증서 발급
-sudo certbot --nginx -d your-domain.duckdns.org
-
-# 6. 애플리케이션 실행
-nohup java -jar /home/ubuntu/app/app.war > /home/ubuntu/app/app.log 2>&1 &
-```
-
-### Jenkins CI/CD
-
-```groovy
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                sh './gradlew clean build -x test'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sshagent(['ec2-ssh-key']) {
-                    sh '''
-                        scp build/libs/*.war ubuntu@your-server:/home/ubuntu/app/
-                        ssh ubuntu@your-server 'pkill -f app.war || true'
-                        ssh ubuntu@your-server 'nohup java -jar /home/ubuntu/app/app.war &'
-                    '''
-                }
-            }
-        }
-    }
-}
-```
-
-## 🧪 테스트
-
-### Geolocation API 테스트
-
-```javascript
-// 브라우저 콘솔 (F12)
-navigator.geolocation.getCurrentPosition(
-	(pos) =>
-		console.log('위도:', pos.coords.latitude, '경도:', pos.coords.longitude),
-	(err) => console.error('에러:', err.message),
-);
-```
-
-### WebSocket 연결 테스트
-
-```javascript
-// 브라우저 콘솔
-const socket = new SockJS('https://sist-all-movie.duckdns.org/ws');
-const stompClient = Stomp.over(socket);
-stompClient.connect({}, () => {
-	console.log('WebSocket 연결 성공');
-});
-```
-
 ## 👥 팀원
 
 | 이름   | 역할       | GitHub                                  |
@@ -455,3 +409,7 @@ stompClient.connect({}, () => {
 | 전성환 | Full Stack | [Github](https://github.com/masterjeon) |
 | 신재화 | Full Stack | [Github](https://github.com/necteo)     |
 | 손다솔 | Full Stack | [Github](https://github.com/dasolson)   |
+
+## 📸 포트폴리오
+
+> https://www.canva.com/design/DAG7Jyysa44/uqUZ8wVXx6HmIn4OHa6XNw/edit?utm_content=DAG7Jyysa44&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
