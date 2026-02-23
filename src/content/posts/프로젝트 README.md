@@ -14,7 +14,7 @@ draft: true
 
 ## 📌 프로젝트 개요
 
-영화 예매와 매점 주문을 통합한 웹 애플리케이션입니다.
+> **영화 예매와 매점 주문을 통합한 웹 애플리케이션입니다.**
 
 - **목적**
   영화관 이용객의 관람/예매 경험을 개선하고,
@@ -31,6 +31,10 @@ draft: true
 - **총 개발 기간**: 2025.12.15 ~ 2026.01.30
 
 **배포 URL**: [https://sist-all-movie.duckdns.org](https://sist-all-movie.duckdns.org)
+
+### UI
+
+> 주요 UI를 하나로 합친 이미지
 
 ## 🛠 기술 스택
 
@@ -198,7 +202,10 @@ erDiagram
 
 ---
 
-## API 설계
+<details>
+<summary>
+<strong style="font-size: 20px">API 설계</strong>
+</summary>
 
 **MainController**
 | Method | URL | 설명 |
@@ -306,6 +313,8 @@ erDiagram
 | Method | URL | 설명 |
 | ------ | --- | ---- |
 
+</details>
+
 ---
 
 ## 🔄 주문 플로우
@@ -404,11 +413,11 @@ http://localhost:8000
 
 ## 👥 팀원
 
-| 이름   | 역할       | GitHub                                  |
-| ------ | ---------- | --------------------------------------- |
-| 전성환 | Full Stack | [Github](https://github.com/masterjeon) |
-| 신재화 | Full Stack | [Github](https://github.com/necteo)     |
-| 손다솔 | Full Stack | [Github](https://github.com/dasolson)   |
+| 이름   | 역할       | GitHub                                     |
+| ------ | ---------- | ------------------------------------------ |
+| 전성환 | Full Stack | [Github](https://github.com/conductorJeon) |
+| 신재화 | Full Stack | [Github](https://github.com/necteo)        |
+| 손다솔 | Full Stack | [Github](https://github.com/dasolson)      |
 
 ## 📸 포트폴리오
 
