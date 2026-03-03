@@ -1,12 +1,12 @@
 ---
 title: Github Pages 배포 중 오류
 published: 2026-01-11
-description: '배포부터 문제라니'
+description: '배포도 어렵다'
 author: 'necteo'
 image: './thumbs/2026-01-11.jpg'
 tags: ['Blogging']
 category: 'Blog'
-draft: false 
+draft: false
 ---
 
 `.github`폴더에 `workflows`폴더에 `CI.yml`이 있길래
@@ -18,16 +18,16 @@ build단계까지만 있는 거 였다..
 그래서 Astro 공식 사이트에서 Deploy부분을 복붙했다
 
 ```yml
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+deploy:
+  needs: build
+  runs-on: ubuntu-latest
+  environment:
+    name: github-pages
+    url: ${{ steps.deployment.outputs.page_url }}
+  steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
 ```
 
 그런데 url이 안맞는듯?

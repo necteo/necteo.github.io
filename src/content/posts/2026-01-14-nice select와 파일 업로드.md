@@ -1,12 +1,12 @@
 ---
 title: 'nice select와 파일 업로드'
 published: 2026-01-14
-description: 'jQuery 플러그인이 Vue를 전력으로 방해한다'
+description: 'jQuery 플러그인과 Vue는 잘 안맞는다'
 author: 'necteo'
 image: ''
 tags: ['Vue', 'Spring Boot']
 category: 'Front'
-draft: false 
+draft: false
 ---
 
 select에서 v-model을 주고 제어하려는데 이상하게 값이 전달이 안되는 것 같았다

@@ -1,7 +1,7 @@
 ---
-title: 'Typescript T'
+title: 'Typescript 제네릭'
 published: 2026-02-04
-description: 'T에 ,는 뭐지'
+description: 'T에 ,를 쓰는 이유'
 pinned: false
 author: 'necteo'
 image: ''

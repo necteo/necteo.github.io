@@ -1,7 +1,7 @@
 ---
 title: 'typescript와 nodejs'
 published: 2026-02-12
-description: 'type은 까다롭다'
+description: 'type 지정과 변환'
 pinned: false
 author: 'necteo'
 image: ''
@@ -17,8 +17,8 @@ draft: false
 #### request
 
 ```ts
-const no = parseInt(req.params.no as string); // string → number
-const { pwd } = req.body; // body에서 받기
+const no = parseInt(req.params.no as string);
+const { pwd } = req.body;
 ```
 
 `req.params`으로 넘어오는 숫자는 숫자가 아니니 `parseInt`로 바꿔서 받도록 하자
@@ -62,7 +62,7 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 <input
 	value={inputValue}
 	onChange={(e) => setInputValue(e.target.value)}
-	onKeyDown={handleKeyDown} // ← 추가
+	onKeyDown={handleKeyDown}
 />;
 ```
 

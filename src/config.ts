@@ -22,8 +22,8 @@ import { LinkPreset } from './types/config';
 const SITE_LANG = 'en'; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 9; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
-	title: '경험없는 내가 개발하는 이야기',
-	subtitle: '아무튼 기록',
+	title: '나의 기록 블로그',
+	subtitle: '공부한 내용이나 트러블 슈팅을 기록하는 블로그',
 	siteURL: 'https://necteo.github.io/', // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: '2026-01-11', // 站点开始运行日期，用于站点统计组件计算运行天数
 
@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题文本
 		text: 'Menus',
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: 'assets/home/home.png',
+		icon: 'src/assets/images/avatar.webp',
 	},
 
 	bangumi: {
@@ -96,26 +96,28 @@ export const siteConfig: SiteConfig = {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
 			desktop: [
+				'',
 				// '/assets/desktop-banner/1.webp',
 				// '/assets/desktop-banner/2.webp',
 				// '/assets/desktop-banner/3.webp',
 				// '/assets/desktop-banner/4.webp',
 				// '/assets/desktop-banner/5.webp',
 				// '/assets/desktop-banner/6.webp',
-				'/assets/desktop-banner/7.jpg',
-				'/assets/desktop-banner/9.jpg',
-				'/assets/desktop-banner/9.webp',
-				'/assets/desktop-banner/8.jpg',
-				'/assets/desktop-banner/10.jpg',
-				'/assets/desktop-banner/11.jpg',
+				// '/assets/desktop-banner/7.jpg',
+				// '/assets/desktop-banner/9.jpg',
+				// '/assets/desktop-banner/9.webp',
+				// '/assets/desktop-banner/8.jpg',
+				// '/assets/desktop-banner/10.jpg',
+				// '/assets/desktop-banner/11.jpg',
 			], // 桌面横幅图片
 			mobile: [
-				'/assets/mobile-banner/1.webp',
-				'/assets/mobile-banner/2.webp',
-				'/assets/mobile-banner/3.webp',
-				'/assets/mobile-banner/4.webp',
-				'/assets/mobile-banner/5.webp',
-				'/assets/mobile-banner/6.webp',
+				'',
+				// '/assets/mobile-banner/1.webp',
+				// '/assets/mobile-banner/2.webp',
+				// '/assets/mobile-banner/3.webp',
+				// '/assets/mobile-banner/4.webp',
+				// '/assets/mobile-banner/5.webp',
+				// '/assets/mobile-banner/6.webp',
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -144,10 +146,10 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: '적어야한다', //"美しいミズキ", // 主页横幅主标题
+			title: '나의 기록 블로그', //"美しいミズキ", // 主页横幅主标题
 
 			subtitle: [
-				'일단 적는중...',
+				'공부한 내용이나 트러블 슈팅을 기록하는 블로그',
 				// "特別なことはないけど、君がいると十分です",
 				// "今でもあなたは私の光",
 				// "君ってさ、知らないうちに私の毎日になってたよ",
@@ -216,20 +218,22 @@ export const siteConfig: SiteConfig = {
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [
-			'/assets/desktop-banner/1.webp',
-			'/assets/desktop-banner/2.webp',
-			'/assets/desktop-banner/3.webp',
-			'/assets/desktop-banner/4.webp',
-			'/assets/desktop-banner/5.webp',
-			'/assets/desktop-banner/6.webp',
+			'',
+			// '/assets/desktop-banner/1.webp',
+			// '/assets/desktop-banner/2.webp',
+			// '/assets/desktop-banner/3.webp',
+			// '/assets/desktop-banner/4.webp',
+			// '/assets/desktop-banner/5.webp',
+			// '/assets/desktop-banner/6.webp',
 		], // 桌面横幅图片
 		mobile: [
-			'/assets/mobile-banner/1.webp',
-			'/assets/mobile-banner/2.webp',
-			'/assets/mobile-banner/3.webp',
-			'/assets/mobile-banner/4.webp',
-			'/assets/mobile-banner/5.webp',
-			'/assets/mobile-banner/6.webp',
+			'',
+			// '/assets/mobile-banner/1.webp',
+			// '/assets/mobile-banner/2.webp',
+			// '/assets/mobile-banner/3.webp',
+			// '/assets/mobile-banner/4.webp',
+			// '/assets/mobile-banner/5.webp',
+			// '/assets/mobile-banner/6.webp',
 		], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: 'center', // 壁纸位置，等同于 object-position
@@ -260,7 +264,7 @@ export const navBarConfig: NavBarConfig = {
 				},
 			],
 		},
-		{
+		/*{
 			name: 'My',
 			url: '/content/',
 			icon: 'material-symbols:person',
@@ -287,7 +291,7 @@ export const navBarConfig: NavBarConfig = {
 					external: false,
 				},
 			],
-		},
+		},*/
 		{
 			name: 'About',
 			url: '/content/',
@@ -332,7 +336,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: 'assets/images/avatar.webp', // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: 'Shin',
+	name: 'Shin JH',
 	bio: 'My Blog',
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
@@ -416,7 +420,7 @@ export const shareConfig: ShareConfig = {
 
 export const announcementConfig: AnnouncementConfig = {
 	title: 'Announcement', // 公告标题
-	content: 'Welcome to my blog! This is a sample announcement.', // 公告内容
+	content: '공부 내용과 트러블 슈팅을 기록하는 개인 블로그입니다.', // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
