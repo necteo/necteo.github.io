@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题文本
 		text: 'Menus',
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: 'src/assets/images/avatar.webp',
+		icon: 'assets/images/avatar.webp',
 	},
 
 	bangumi: {
