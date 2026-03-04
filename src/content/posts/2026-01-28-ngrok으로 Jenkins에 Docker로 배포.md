@@ -2,7 +2,7 @@
 title: 'ngrok으로 Jenkins에 Docker로 배포'
 published: 2026-01-28
 description: 'ngrok에 Jenkins에 Docker에 Github에 Gradle에 Ubuntu에'
-pinned: false
+pinned: true
 author: 'necteo'
 image: ''
 tags: ['Jenkins', 'Docker', 'Ubuntu']

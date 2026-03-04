@@ -2,7 +2,7 @@
 title: 'Git Action으로 AWS에 Docker Compose 배포 정리'
 published: 2026-01-28
 description: 'Git Action으로 AWS에 Docker Compose 자동 배포 정리'
-pinned: false
+pinned: true
 author: 'necteo'
 image: ''
 tags: ['AWS', 'Docker', 'Ubuntu']
