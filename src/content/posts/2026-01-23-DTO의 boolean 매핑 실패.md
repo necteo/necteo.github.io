@@ -2,7 +2,7 @@
 title: 'DTO의 boolean 매핑 실패'
 published: 2026-01-23
 description: 'is를 붙이면 안된다'
-pinned: true
+pinned: false
 author: 'necteo'
 image: ''
 tags: ['Spring Boot', 'Javascript', 'Blogging']
