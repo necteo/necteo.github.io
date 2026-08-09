@@ -70,7 +70,7 @@ const getTypeIcon = (type: string) => {
 // 格式化日期
 const formatDate = (dateString: string) => {
 	const date = new Date(dateString);
-	return date.toLocaleDateString("zh-CN", { year: "numeric", month: "long" });
+	return date.toLocaleDateString("en-US", { year: "numeric", month: "long" });
 };
 
 // 计算持续时间
@@ -79,6 +79,11 @@ const getDuration = (startDate: string, endDate?: string) => {
 	const end = endDate ? new Date(endDate) : new Date();
 	const diffTime = Math.abs(end.getTime() - start.getTime());
 	const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
+
+	// 자격증·수상처럼 시점 이벤트는 기간을 표시하지 않는다
+	if (diffMonths === 0) {
+		return "";
+	}
 
 	if (diffMonths < 12) {
 		return `${diffMonths} ${i18n(I18nKey.timelineMonths)}`;
