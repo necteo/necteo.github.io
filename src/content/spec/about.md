@@ -1,49 +1,25 @@
+Java와 Spring Boot를 중심으로 백엔드를 공부합니다. 그리고 프론트엔드와 배포까지 직접 다루며 서비스 전체 흐름을 이해하는 풀스택 지향 개발자를 목표로 합니다.
 
-This website is built with the **Astro** framework using the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) theme.
+공부한 내용과 개발하며 마주친 문제를 이곳에 정리합니다. 동작하는 코드를 넘어 왜 그렇게 동작하는지 이해하고 넘어가려 합니다.
 
-::github{repo="matsuzaka-yuki/Mizuki"}
+## 다루는 것
 
-## 🌟 Theme Features
+- **Backend** — Java, Spring Boot, REST API, Spring Security
+- **Database** — Oracle, MySQL, MyBatis, JPA, 테이블 설계
+- **Infra** — Docker, Jenkins, AWS EC2, Nginx, CI/CD
+- **Frontend** — JSP, Vue.js, React, TypeScript
 
-### 🎨 Design & User Experience
-- **Modern & Elegant Design** - Clean, minimalist interface with beautiful typography
-- **Fully Responsive** - Optimized for all devices from mobile to desktop
-- **Dark/Light Mode** - Automatic theme switching with smooth transitions
-- **Beautiful Typography** - Enhanced readability with JetBrains Mono font
-- **Smooth Animations** - Fluid page transitions and interactive elements
+## 프로젝트
 
-### 🔍 Content & Search
-- **Advanced Search** - Powered by [Pagefind](https://pagefind.app/) for fast, accurate results
-- **Enhanced Markdown** - Extended syntax with code highlighting and math support
-- **Interactive Table of Contents** - Auto-scroll navigation for long articles
-- **RSS Feed Generation** - Stay updated with automatic feed generation
-- **Reading Time Estimation** - Know how long articles take to read
-- **Post Categorization** - Organize content with tags and categories
+세 개의 웹 프로젝트를 진행했습니다. 자세한 내용은 [Projects](/projects/) 페이지에 정리했습니다.
 
+- **BookTalk** — Spring Boot · React · Express를 분리 구성한 풀스택 SPA (개인)
+- **AllMovie** — 영화 예매와 매점 주문 플랫폼. 실시간 통신과 CI/CD 담당 (팀)
+- **AllCamp** — 캠핑 정보 커뮤니티. 게시판과 계층형 댓글 담당 (팀)
 
+학습과 프로젝트 이력은 [Timeline](/timeline/) 페이지에서 볼 수 있습니다.
 
-### 📱 Special Pages
-- **Anime Tracking Page** - Track your anime watching progress with ratings
-- **Friends Links Page** - Showcase friend websites with beautiful cards
-- **Diary/Moments Page** - Share life moments like social media posts
-- **Archive Page** - Organized timeline view of all posts
-- **About Page** - Customizable personal introduction (this page!)
+## 링크
 
-### 🛠 Technical Features
-- **Enhanced Code Blocks** - Powered by [Expressive Code](https://expressive-code.com/)
-- **Math Support** - LaTeX rendering with KaTeX for mathematical expressions
-- **Image Optimization** - PhotoSwipe gallery with lazy loading
-- **SEO Optimized** - Built-in sitemap and meta tags for better search visibility
-- **Performance Optimized** - Fast loading with caching and optimization
-- **Comment System Ready** - Integration support for Twikoo comments
+- GitHub — [github.com/necteo](https://github.com/necteo)
 
-### 🎯 Advanced Markdown Features
-- **Callouts & Admonitions** - Beautiful info boxes with `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`
-- **Mathematical Equations** - Write LaTeX math with `$inline$` and `$$block$$` syntax
-- **GitHub Cards** - Embed repository cards with `::github{repo="user/repo"}`
-- **Syntax Highlighting** - Advanced code highlighting with line numbers
-- **Copy Code Buttons** - Easy code copying functionality
-
----
-
-*Built with ❤️ using Astro and inspired by modern web design principles.*
