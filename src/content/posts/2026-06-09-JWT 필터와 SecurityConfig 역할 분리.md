@@ -43,7 +43,7 @@ protected boolean shouldNotFilter(HttpServletRequest request) {
 
 ### SecurityConfig가 하는 일
 
-`SecurityConfig`의 `authorizeHttpRequests`가 **실제 인가(Authorization)**를 담당한다
+`SecurityConfig`의 `authorizeHttpRequests`가 **실제 인가**(Authorization)를 담당한다
 
 어떤 경로에 어떤 사용자가 접근할 수 있는지 여기서 결정한다
 

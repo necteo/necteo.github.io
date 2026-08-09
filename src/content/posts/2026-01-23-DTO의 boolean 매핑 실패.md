@@ -76,7 +76,7 @@ DTO랑 JSON 객체에서 `isBase`를 `base`로 수정
 
 #### 다른 방법
 
-1. **@JsonProperty("isBase")**
+1. `@JsonProperty("isBase")`
    이건 이 필드가 받을 JSON 객체의 이름을 고정해주는 어노테이션
    근데 Getter에서 `is`를 붙여준다는건 `base`만 쓰라는 의미 같고
    그럼 DTO가 base니까 JSON에서도 `base`로 통일하는게 맞을듯?

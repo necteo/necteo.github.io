@@ -18,7 +18,7 @@ Spring MVC에서는 `OncePerRequestFilter`를 상속해서 필터를 만드는�
 
 ### OncePerRequestFilter vs GlobalFilter
 
-`OncePerRequestFilter`는 **서블릿 기반(Spring MVC)** 환경에서 쓴다
+`OncePerRequestFilter`는 **서블릿 기반**(Spring MVC) 환경에서 쓴다
 
 요청당 정확히 한 번만 실행되는 걸 보장해주고, `shouldNotFilter()`를 오버라이드해서 특정 경로를 건너뛸 수 있다
 

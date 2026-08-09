@@ -45,7 +45,7 @@ draft: true
 - **Oracle Database 21C** - 메인 데이터베이스
 - **MyBatis**
 - **REST API**
-- **WebSocket (STOMP)** - 실시간 양방향 통신
+- **WebSocket** (STOMP) - 실시간 양방향 통신
 
 ### Frontend
 
